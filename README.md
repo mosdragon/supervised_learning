@@ -61,15 +61,14 @@ Example usage from svm.py:
 
 ```python
 # Data params
-FILENAME = 'investing/cleaned/class_sentiments.csv'
-CLASSIFIER_FIELD = 'S&P500 Next Week Positive Returns'
-
-PERCENTAGE_TRAINING = 0.70
+# Your data
+FILENAME = 'example/data.csv'
 
 # Cross Validation Params
 N_FOLDS = 10
+PERCENTAGE_TRAINING = 0.70
 
 # SVM Params
-KERNEL = 'rbf'  # Options: 'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'
-DEGREE = 1
+KERNEL = 'poly'  # Options: 'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'
+DEGREE = 6
 ```
