@@ -12,8 +12,8 @@ N_FOLDS = 10
 PERCENTAGE_TRAINING = 0.70
 
 # SVM Params
-KERNEL = 'rbf'  # Options: 'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'
-DEGREE = 1
+KERNEL = 'poly'  # Options: 'linear', 'poly', 'rbf', 'sigmoid', 'precomputed'
+DEGREE = 6
 
 df = util.read_file(FILENAME)
 train, test = util.split_data(df, PERCENTAGE_TRAINING)
@@ -52,5 +52,9 @@ for n_iteration, fold_nums in enumerate(kf):
 
 # Now run on actual test set
 classifier = best_classifier
-final_score = classifier.score(*test)
-print "Final Score: {}".format(final_score)
+
+train_accuracy = classifier.score(*train)
+print "Test Accuracy: {}".format(train_accuracy)
+
+test_accuracy = classifier.score(*test)
+print "Test Accuracy: {}".format(test_accuracy)

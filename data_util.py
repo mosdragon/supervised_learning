@@ -69,9 +69,9 @@ def split_data(df, percentage_training):
 	cutoff = int((percentage_training) * n_examples)
 
 	training_set = (data[:cutoff].values, target[:cutoff].values)
-	training_set = (data[cutoff:].values, target[cutoff:].values)
+	test_set = (data[cutoff:].values, target[cutoff:].values)
 
-	return training_set, training_set
+	return training_set, test_set
 
 
 def shuffle_dataframe(df):

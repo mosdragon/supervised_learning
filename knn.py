@@ -45,18 +45,17 @@ for n_iteration, fold_nums in enumerate(kf):
     score = classifier.score(vldX, vldY)
     scores.append(score)
 
-    print "Iteration: {}\tScore: {}".format(n_iteration + 1, score)
-
     # Keep track of the best classifier
     if score > highest_score:
         best_classifier = classifier
         highest_score = score
 
-avg_score = np.mean(scores)
-print "AVG SCORE: {}".format(avg_score)
-print "High Score: {}".format(highest_score)
 
 # Now run on actual test set
 classifier = best_classifier
-final_score = classifier.score(*test)
-print "Final Score: {}".format(final_score)
+
+train_accuracy = classifier.score(*train)
+print "Test Accuracy: {}".format(train_accuracy)
+
+test_accuracy = classifier.score(*test)
+print "Test Accuracy: {}".format(test_accuracy)
