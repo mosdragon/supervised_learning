@@ -1,7 +1,7 @@
 ## Supervised Learning Algorithms
 
 This is a convenient sample of some of the most common supervised
-learning algorithms, provided by scikit-learn and PyBrain. Also provided are
+learning algorithms, provided by scikit-learn. Also provided are
 some helpful utils in __data_utils.py__.
 
 ### Disclaimer
@@ -22,19 +22,18 @@ You also need the following packages:
 - scipy
 - pandas
 - scikit-learn
-- PyBrain
 
 It's easiest to install it with pip. Note, you may need to use "sudo" to install
 using pip, depending on your machine.
 
 ```bash
-pip install numpy scipy pandas scikit-learn pybrain
+pip install numpy scipy pandas scikit-learn
 ```
 
 ### Feature Extraction
 If your dataset contains attributes that are text, with the exception of the
 output column, you will need to do some feature extraction for your data to be
-compatible with scikit-learn and Pybrain's algorithms. For convenience, I've
+compatible with scikit-learn and algorithms. For convenience, I've
 added a simple helper method in __data_util.py__ to do this.
 
 Usage:
@@ -42,8 +41,8 @@ Usage:
 import data_util
 
 # Note, must be a csv
-INPUT_DATASET = 'path/to/in_dataset.csv'
-OUTPUT_DATASET = 'path/to/out_dataset.csv'
+INPUT_DATASET = 'example/data.csv'
+OUTPUT_DATASET = 'example/processed.csv'
 
 data_util.clean_data(INPUT_DATASET, OUTPUT_DATASET)
 ```
